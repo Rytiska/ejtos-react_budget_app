@@ -7,8 +7,6 @@ const Currency = (props) => {
   const { dispatch, } = useContext(AppContext);
   
   const updateCurrency = (event) => {
-    /*console.log(currency+"....A..."+event.target.value);
-    */
     dispatch({
           type: 'CHG_CURRENCY',
           payload: event.target.value,
@@ -17,17 +15,16 @@ const Currency = (props) => {
     return;
   }
   return (
-    <div className='alert alert-secondary'>  
+    <div>  
     <span>
       <select 
         className='btn btn-success dropdown-toggle'
         id='currency'
-        onChange={(event) =>updateCurrency(event)}>Currency ({currency})
-          <option defaultValue={currency}>Currency ({currency})</option>
-          <option value='£'>£ Pound</option>
-          <option value='$'>$ Dollar</option>
-          <option value='€'>€ Euro</option>
-          <option value='₹'>₹ Rupee</option>
+        onChange={(event) =>updateCurrency(event)}>Currency =({currency})
+          <option value='£ Pound'>£ Pound</option>
+          <option value='$ Dollar'>$ Dollar</option>
+          <option value='€ Euro'>€ Euro</option>
+          <option value='₹ Rupee'>₹ Rupee</option>
       </select>
       </span>
     </div>
